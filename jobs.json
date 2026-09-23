@@ -1,0 +1,15 @@
+{
+  "db": "sched.db",
+  "clock_rewind_threshold_sec": 5,
+  "defaults": {"timeout_sec": 60, "max_delay_sec": 3600},
+  "jobs": [
+    {
+      "name": "hello",
+      "expr": "* * * * *",
+      "tz": "Asia/Shanghai",
+      "cmd": "echo hello from sched",
+      "misfire": {"policy": "fire_once"},
+      "overlap": "forbid"
+    }
+  ]
+}
